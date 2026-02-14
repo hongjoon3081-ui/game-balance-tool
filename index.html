@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Balance Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Game Balance Calculator</h1>
+
+<div class="container">
+
+    <label>Player DPS</label>
+    <input id="dps" type="number" value="55">
+
+    <label>Target Time To Kill (seconds)</label>
+    <input id="ttk" type="number" value="3">
+
+    <label>Monster Count</label>
+    <input id="count" type="number" value="20">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <h2 id="result"></h2>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
