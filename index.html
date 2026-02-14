@@ -21,9 +21,17 @@
     <label>Monster Count</label>
     <input id="count" type="number" value="20">
 
-    <button onclick="calculate()">Calculate</button>
+    <label>Level Growth Rate (%)</label>
+    <input id="growth" type="number" value="8">
 
-    <h2 id="result"></h2>
+    <label>Total Levels</label>
+    <input id="levels" type="number" value="40">
+
+
+    <button onclick="generateTable()">Generate Table</button>
+
+
+    <pre id="result"></pre>
 
 </div>
 

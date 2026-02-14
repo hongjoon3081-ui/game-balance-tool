@@ -1,14 +1,23 @@
-function calculate() {
+function generateTable() {
 
-    const dps = Number(document.getElementById("dps").value);
+    const baseDps = Number(document.getElementById("dps").value);
+    const growth = Number(document.getElementById("growth").value) / 100;
     const ttk = Number(document.getElementById("ttk").value);
-    const count = Number(document.getElementById("count").value);
+    const levels = Number(document.getElementById("levels").value);
 
-    const monsterHP = dps * ttk;
+    let output = "Level | Player DPS | Monster HP\n";
+    output += "---------------------------------\n";
 
-    const totalTime = ttk * count;
+    let currentDps = baseDps;
 
-    document.getElementById("result").innerText =
-        "Recommended Monster HP: " + monsterHP +
-        " | Total Clear Time: " + totalTime + " seconds";
+    for (let i = 1; i <= levels; i++) {
+
+        const monsterHp = Math.round(currentDps * ttk);
+
+        output += i + " | " + Math.round(currentDps) + " | " + monsterHp + "\n";
+
+        currentDps = currentDps * (1 + growth);
+    }
+
+    document.getElementById("result").innerText = output;
 }
